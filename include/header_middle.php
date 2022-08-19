@@ -7,13 +7,32 @@
             <div class="col-lg-6 col-md-7 hidden-sm hidden-xs">
                 <div class="primary-menu">
                     <ul class="menu biolife-menu clone-main-menu clone-primary-menu" id="primary-menu" data-menuname="main menu">
-                        <?php
-                            foreach ($ctg_datas as $ctg_data){
-                        ?>
-                        <li class="menu-item"><a href="./category.php?status=catView&&id=<?php echo $ctg_data['id'];?>"><?php echo $ctg_data['ctg_name'];?></a></li>
-                        <?php } ?>
+                        <li>
+                            <div class="vertical-category-block">
+                                <div class="block-title">
+                                    <span class="menu-title">Category</span>
+                                    <!-- <span class="angle" data-tgleclass="fa fa-caret-down"><i class="fa fa-caret-up" aria-hidden="true"></i></span> -->
+                                </div>
+                                <div class="wrap-menu">
+                                    <ul class="menu clone-main-menu">
+                                        <?php
+                                            foreach ($ctg_datas as $ctg_data){
+                                        ?>
+                                        <li class="menu-item menu-item-has-children has-megamenu">
+                                            <a href="./category.php?status=catView&&id=<?php echo $ctg_data['id'];?>" class="menu-name" data-title="<?php echo $ctg_data['ctg_name'];?>"><?php echo $ctg_data['ctg_name'];?></a>
+                                        </li>
+                                        <?php } ?>
+                                    </ul>
+                                </div>
+                            </div>   
+                        </li>                    
+                        <li>
+                            <a href="./contact.php" style="color:black" class="link-to">CONTACT US</a>
+                        </li>
                     </ul>
                 </div>
+                <!-- <div class="float-right">
+                </div> -->
             </div>
             <div class="col-lg-3 col-md-3 col-md-6 col-xs-6">
                 <div class="biolife-cart-info">
@@ -39,6 +58,7 @@
                             </form>
                         </div>
                     </div>
+                   
                     <div class="wishlist-block hidden-sm hidden-xs">
                         <a href="#" class="link-to">
                                     <span class="icon-qty-combine">

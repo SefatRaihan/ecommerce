@@ -31,10 +31,10 @@
             }
         }else{
             $_SESSION['cart'][0] = array(
-              'pdt_name' => $_POST['pdt_name'],
-              'pdt_price' => $_POST['pdt_price'],
-              'pdt_image' => $_POST['pdt_image'],
-              'quantity' => 1,
+                'pdt_name' => $_POST['pdt_name'],
+                'pdt_price' => $_POST['pdt_price'],
+                'pdt_image' => $_POST['pdt_image'],
+                'quantity' => 1,
             );
 
         }

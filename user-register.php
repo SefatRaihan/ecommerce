@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("admin/classes/adminBack.php");
 $obj_adminBack = new adminBack();
 $ctg = $obj_adminBack->displayedPublishCategory();
@@ -7,22 +8,21 @@ $ctg_datas = array();
 while ($data = mysqli_fetch_assoc($ctg)){
     $ctg_datas[] = $data;
 }
-if(isset($_GET['status'])){
-    $catId = $_GET['id'];
-    if ($_GET['status']==='catView'){
-        $pro_data = $obj_adminBack->product_by_category($catId);
-        $pros = array();
-        while ($pro_datas = mysqli_fetch_assoc($pro_data)){
-            $pros[] = $pro_datas;
+
+    if (isset($_POST['user_register_btn'])){
+        $msg = $obj_adminBack->userRegister($_POST);
+    }
+
+    if(isset($_SESSION['user_id'])){
+        $userId = $_SESSION['user_id'];
+        if($userId){
+            header('location:user_profile.php');
         }
     }
-}
-if(isset($_GET['status'])){
-    $catId = $_GET['id'];
-    if ($_GET['status']==='catView'){
-        $category_name = $obj_adminBack->category_by_id($catId);
-    }
-}
+
+    
+
+
 ?>
 
 
@@ -53,13 +53,12 @@ if(isset($_GET['status'])){
     <!-- Page Contain -->
     <div class="page-contain">
         <div class="container">
-
+           
             <div class="row">
-
                 <!--Form Sign In-->
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="signin-container">
-                        <form action="#" name="frm-login" method="post">
+                        <form action="#" name="frm-registration" method="post">
                             <p class="form-row">
                                 <label for="user_name">User Name:<span class="requite">*</span></label>
                                 <input type="text" id="user_name" name="user_name" value="" class="txt-input" required>
@@ -78,17 +77,15 @@ if(isset($_GET['status'])){
                             </p>
                             <p class="form-row">
                                 <label for="user_pass">Password:<span class="requite">*</span></label>
-                                <input type="text" id="user_pass" name="user_pass" value="" class="txt-input" required>
+                                <input type="password" id="user_pass" name="user_pass" value="" class="txt-input" required>
                             </p>
                             <p class="form-row">
                                 <label for="user_mobile">Mobile:<span class="requite">*</span></label>
                                 <input type="number" id="user_mobile" name="user_mobile" value="" class="txt-input"
-                                       required>
-                            </p>
-                            <p class="form-row">
-                                <input type="hidden" id="user_roles" name="user_roles" value="4">
+                                    required>
                             </p>
                             <p class="form-row wrap-btn">
+                                <input type="hidden" id="user_roles" name="user_roles" value="5">
                                 <input type="submit" name="user_register_btn" class="btn btn-submit btn-bold"
                                        value="Registration" >
                             </p>
