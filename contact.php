@@ -19,7 +19,32 @@ while ($data = mysqli_fetch_assoc($ctg)){
 
 
 <?php include_once("include/head.php");?>
+<style>
+.accordion {
+background-color: white !important;
+  color: #7faf51;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
 
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 8px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+</style>
     <body class="biolife-body">
     <!-- Preloader -->
     <div id="biof-loading">
@@ -94,14 +119,29 @@ while ($data = mysqli_fetch_assoc($ctg)){
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="register-in-container">
                         <div class="intro">
-                            <h4 class="box-title text-center">FAQ!</h4>
-                            <ul class="lis">
-                                <li>Check out faster</li>
-                                <li>Save multiple shipping anddesses</li>
-                                <li>Access your order history</li>
-                                <li>Track new orders</li>
-                                <li>Save items to your Wishlist</li>
-                            </ul>
+                            <h4 class="box-title text-center" style="margin-bottom: 20px">FAQ!</h4>
+                            <button class="accordion">What do you have to sell?</button>
+                            <div class="panel">
+                            <p>We are bringing in our fold traditional, native, healthy and unique tasting sweets and snacks to be delivered at your doorstep</p>
+                            </div>
+
+                            <button class="accordion">Where are the products prepared?</button>
+                            <div class="panel">
+                            <p>The products are prepared at the place where they have originated from or are well known and famous. Yes, if your choice is Halwa then it is obviously from Tirunelveli District.</p>
+                            </div>
+
+                            <button class="accordion">Are only native snacks and sweets dealt with?</button>
+                            <div class="panel">
+                            <p>No. All snacks and sweets that are not only native but those which have a unique taste from a particular place are also brought in our fold.</p>
+                            </div>
+                            <button class="accordion">What guarantees freshness for the products ordered?</button>
+                            <div class="panel">
+                            <p>Tredy Foods strives to deliver the products that are fresh and systems are kept in place to source the best products and safely consign them to you. We don't stock the products but place once we receive orders. Even though we don't deny that it involves time we at Tredy Foods believe that centralising the whole despatch process would lead to economies of scale and allow quality check , aggregating the products would add value to the customers who wish to procure different products from different sources instead of routing the orders to the respective vendors.</p>
+                            </div>
+                            <button class="accordion">How will my order be delivered?</button>
+                            <div class="panel">
+                            <p>Courier companies offering the best services are roped in to deliver your products safely.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -118,4 +158,20 @@ while ($data = mysqli_fetch_assoc($ctg)){
     <!-- Scroll Top Button -->
     <a class="btn-scroll-top"><i class="biolife-icon icon-left-arrow"></i></a>
     </body>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+            panel.style.display = "none";
+            } else {
+            panel.style.display = "block";
+            }
+        });
+        }
+</script>
 <?php include_once ("include/scripts.php");?>
