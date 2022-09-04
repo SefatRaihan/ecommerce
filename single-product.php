@@ -50,7 +50,8 @@
 <div class="page-contain">
     <!--Hero Section-->
     <div class="hero-section hero-background">
-        <h1 class="page-title"><?php foreach ($pros as $pro){
+        <h1 class="page-title">
+            <?php foreach ($pros as $pro){
                 echo $pro['ctg_name'];
             } ?>
         </h1>
@@ -84,7 +85,7 @@
                                 <div class="media">
                                     <ul class="biolife-carousel slider-for" data-slick='{"arrows":false,"dots":false,"slidesMargin":30,"slidesToShow":1,"slidesToScroll":1,"fade":true,"asNavFor":".slider-nav"}'>
                                         <li><img src="admin/upload/<?php echo $pro['pdt_image'];?>" alt="" width="500"
-                                                 height="500"></li>
+                                                height="500"></li>
                                     </ul>
                                 </div>
                                 <div class="product-attribute">

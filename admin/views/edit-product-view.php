@@ -76,8 +76,8 @@ if(isset($_POST['u-pdt-btn'])){
     <div class="form-group">
         <label for="u-pdt-status">Product Status</label>
         <select name="u-pdt-status" class="form-control">
-            <option value="1">Published</option>
-            <option value="0">Unpublished</option>
+            <option value="1" <?php echo ($pdt_info['pdt_status'] == 1) ? 'selected' : ''; ?>>Published</option>
+            <option value="0" <?php echo ($pdt_info['pdt_status'] == 1) ? 'selected' : ''; ?>pdt_>Unpublished</option>
         </select>
     </div>
     <input

@@ -1,6 +1,5 @@
 <?php
-
-use LDAP\Result;
+// use LDAP\Result;
 
 class adminBack
 {
@@ -131,6 +130,160 @@ class adminBack
         return $message;
     }
 
+    function addSlider($data){
+        $title = $data['title'];
+        $slider_desc = $data['slider_desc'];
+        $slider_image_name = $_FILES['slider_image']['name'];
+        $slider_image_size = $_FILES['slider_image']['size'];
+        $slider_image_tmp_name = $_FILES['slider_image']['tmp_name'];
+        $slider_image_extn = pathinfo($slider_image_name, PATHINFO_EXTENSION);
+        $slider_status = $data['status'];
+
+        if($slider_image_extn ==  'jpg' or $slider_image_extn == 'png' or $slider_image_extn == 'jpeg'){
+            if ($slider_image_size <= '2097152'){
+                $query = "INSERT INTO sliders (title,slider_desc,slider_image,status) VALUE ('$title','$slider_desc','$slider_image_name',$slider_status)";
+
+                if (mysqli_query($this->conn, $query)){
+                    move_uploaded_file($slider_image_tmp_name, 'upload/sliders/'.$slider_image_name);
+                    $msg = "Your Slider  uploaded successfully";
+                    return $msg;
+                }
+            }
+        }else{
+            $msg = "Your file must be a JPG, PNG or JPEG";
+            return $msg;
+        }
+    }
+
+    function displaySlider(){
+        $query = "SELECT * FROM sliders";
+        if (mysqli_query($this->conn,$query)){
+            $slider = mysqli_query($this->conn,$query);
+
+        }
+        return $slider;
+    }
+
+    function deleteSlider($id){
+        $query = "DELETE FROM sliders WHERE id =$id";
+        if(mysqli_query($this->conn, $query)){
+            $message = "Delete Successful!";
+            return $message;
+        }
+    }
+
+    function editSlider($id){
+        $query = "SELECT * FROM sliders WHERE id=$id";
+        if (mysqli_query($this->conn,$query)){
+            $slider_info = mysqli_query($this->conn,$query);
+            $slider_data = mysqli_fetch_assoc($slider_info);
+            return $slider_data;
+        }
+    }
+
+    function updateSlider($data){
+        $id = $data['u_slider_id'];
+        $title = $data['title'];
+        $slider_desc = $data['slider_desc'];
+        $image_name = $_FILES['slider_image']['name'];
+        $image_size = $_FILES['slider_image']['size'];
+        $image_tmp_name = $_FILES['slider_image']['tmp_name'];
+        $image_extn = pathinfo($image_name, PATHINFO_EXTENSION);
+        $status = $data['status'];
+
+            if($image_extn ==  'jpg' or $image_extn == 'png' or $image_extn == 'jpeg')
+            {
+                if ($image_size <= '2097152'){
+                        $query = "UPDATE sliders SET title='$title',slider_desc='$slider_desc',slider_image='$image_name',status='$status' WHERE id=$id";
+                        if (mysqli_query($this->conn, $query)){
+                            move_uploaded_file($image_tmp_name, 'upload/sliders/'.$image_name);
+                            $msg = "Your Slider uploaded successfully";
+                            return $msg;
+                        }
+                }
+            }else{
+                $msg = "Your file must be a JPG, PNG or JPEG";
+                return $msg;
+            }
+    }
+
+
+    function addBrand($data){
+        $title = $data['title'];
+        $brand_image_name = $_FILES['brand_image']['name'];
+        $brand_image_size = $_FILES['brand_image']['size'];
+        $brand_image_tmp_name = $_FILES['brand_image']['tmp_name'];
+        $brand_image_extn = pathinfo($brand_image_name, PATHINFO_EXTENSION);
+        $status = $data['status'];
+
+        if($brand_image_extn ==  'jpg' or $brand_image_extn == 'png' or $brand_image_extn == 'jpeg'){
+            if ($brand_image_size <= '2097152'){
+                $query = "INSERT INTO brands (title,brand_image,status) VALUE ('$title','$brand_image_name',$status)";
+
+                if (mysqli_query($this->conn, $query)){
+                    move_uploaded_file($brand_image_tmp_name, 'upload/brand/'.$brand_image_name);
+                    $msg = "Your Brand  uploaded successfully";
+                    return $msg;
+                }
+            }
+        }else{
+            $msg = "Your file must be a JPG, PNG or JPEG";
+            return $msg;
+        }
+    }
+
+    
+    function displayBrand(){
+        $query = "SELECT * FROM brands";
+        if (mysqli_query($this->conn,$query)){
+            $brand = mysqli_query($this->conn,$query);
+
+        }
+        return $brand;
+    }
+
+    function editBrand($id){
+        $query = "SELECT * FROM brands WHERE id=$id";
+        if (mysqli_query($this->conn,$query)){
+            $brand_info = mysqli_query($this->conn,$query);
+            $brand_data = mysqli_fetch_assoc($brand_info);
+            return $brand_data;
+        }
+    }
+
+    function updateBrand($data){
+        $id = $data['u_brand_id'];
+        $title = $data['title'];
+        $image_name = $_FILES['brand_image']['name'];
+        $image_size = $_FILES['brand_image']['size'];
+        $image_tmp_name = $_FILES['brand_image']['tmp_name'];
+        $image_extn = pathinfo($image_name, PATHINFO_EXTENSION);
+        $status = $data['status'];
+
+            if($image_extn ==  'jpg' or $image_extn == 'png' or $image_extn == 'jpeg')
+            {
+                if ($image_size <= '2097152'){
+                        $query = "UPDATE brands SET title='$title',brand_image='$image_name',status='$status' WHERE id=$id";
+                        if (mysqli_query($this->conn, $query)){
+                            move_uploaded_file($image_tmp_name, 'upload/brand/'.$image_name);
+                            $msg = "Your Brand uploaded successfully";
+                            return $msg;
+                        }
+                }
+            }else{
+                $msg = "Your file must be a JPG, PNG or JPEG";
+                return $msg;
+            }
+    }
+
+    function deleteBrand($id){
+        $query = "DELETE FROM brands WHERE id =$id";
+        if(mysqli_query($this->conn, $query)){
+            $message = "Delete Successful!";
+            return $message;
+        }
+    }
+
     function addProduct($data){
         $pdt_name = $data['pdt-name'];
         $pdt_price = $data['pdt-price'];
@@ -195,19 +348,20 @@ class adminBack
         $u_pdt_image_extn = pathinfo($u_pdt_image_name, PATHINFO_EXTENSION);
         $u_pdt_status = $data['u-pdt-status'];
 
-        if($u_pdt_image_extn ==  'jpg' or $u_pdt_image_extn == 'png' or $u_pdt_image_extn == 'jpeg'){
-            if ($u_pdt_image_size <= '2097152'){
-                $query = "UPDATE product SET pdt_name='$u_pdt_name',pdt_price=$u_pdt_price,pdt_category=$u_pdt_category,pdt_desc='$u_pdt_desc',pdt_image='$u_pdt_image_name',pdt_status='$u_pdt_status' WHERE pdt_id=$u_pdt_id";
-                if (mysqli_query($this->conn, $query)){
-                    move_uploaded_file($u_pdt_image_tmp_name, 'upload/'.$u_pdt_image_name);
-                    $msg = "Your Product uploaded successfully";
-                    return $msg;
+            if($u_pdt_image_extn ==  'jpg' or $u_pdt_image_extn == 'png' or $u_pdt_image_extn == 'jpeg')
+            {
+                if ($u_pdt_image_size <= '2097152'){
+                        $query = "UPDATE product SET pdt_name='$u_pdt_name',pdt_price=$u_pdt_price,pdt_category=$u_pdt_category,pdt_desc='$u_pdt_desc',pdt_image='$u_pdt_image_name',pdt_status='$u_pdt_status' WHERE pdt_id=$u_pdt_id";
+                        if (mysqli_query($this->conn, $query)){
+                            move_uploaded_file($u_pdt_image_tmp_name, 'upload/'.$u_pdt_image_name);
+                            $msg = "Your Product uploaded successfully";
+                            return $msg;
+                        }
                 }
+            }else{
+                $msg = "Your file must be a JPG, PNG or JPEG";
+                return $msg;
             }
-        }else{
-            $msg = "Your file must be a JPG, PNG or JPEG";
-            return $msg;
-        }
     }
 
     function product_by_category($id){
@@ -242,6 +396,24 @@ class adminBack
         }
     }
 
+    function displayedPublishedSlider(){
+        $query = "SELECT * FROM sliders WHERE status=1";
+
+        if(mysqli_query($this->conn,$query)){
+            $return_sliders = mysqli_query($this->conn,$query);
+        }
+        return $return_sliders;
+    }
+
+    function displayedPublishedBrand(){
+        $query = "SELECT * FROM brands WHERE status=1";
+
+        if(mysqli_query($this->conn,$query)){
+            $return_sliders = mysqli_query($this->conn,$query);
+        }
+        return $return_sliders;
+    }
+    
     function userRegister($data){
         $userName       = $data['user_name'];
         $userFirstName  = $data['first_name'];
@@ -286,6 +458,7 @@ class adminBack
         if (mysqli_query($this->conn, $query)) {
             $result = mysqli_query($this->conn, $query);
             $user_info = mysqli_fetch_assoc($result);
+            
 
             if ($user_info){
                 header('location:user_profile.php');
@@ -293,14 +466,12 @@ class adminBack
                 $_SESSION['user_id'] = $user_info['user_id'];
                 $_SESSION['user_email'] = $user_info['user_email'];
                 $_SESSION['user_password'] = $user_info['user_password'];
-                $_SESSION['first_name'] = $user_info['userName'];
+                $_SESSION['user_name'] = $user_info['userName'];
             } else {
                 $error =  "your email or password is incorrect";
             }
 
-
         }
-
 
     }
 
@@ -318,10 +489,9 @@ class adminBack
             $profile = mysqli_query($this->conn,$query);
 
         }
-        // var_dump($profile);
         return $profile;
     }
-    
+
     function contact($data)
     {
         $UserName = $data['UName'];

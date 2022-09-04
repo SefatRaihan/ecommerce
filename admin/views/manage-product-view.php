@@ -4,7 +4,7 @@
     if(isset($_GET['status'])){
         $product_id = $_GET['id'];
         if($_GET['status']=='delete'){
-           $return_msg = $obj_adminBack->deleteProduct($product_id);
+            $return_msg = $obj_adminBack->deleteProduct($product_id);
         }
     }
 

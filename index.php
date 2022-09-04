@@ -7,6 +7,34 @@
     while ($data = mysqli_fetch_assoc($ctg)){
         $ctg_datas[] = $data;
     }
+
+    $slider = $obj_adminBack->displayedPublishedSlider();
+
+    $sliders = array();
+    while ($data = mysqli_fetch_assoc($slider)){
+        $sliders[] = $data;
+    }
+
+    $brand = $obj_adminBack->displayedPublishedBrand();
+    
+    $brands = array();
+    while ($data = mysqli_fetch_assoc($brand)){
+        $brands[] = $data;
+    }
+    
+
+    if(isset($_GET['status'])){
+        $pdtId = $_GET['id'];
+        if ($_GET['status']==='singleProduct'){
+            $pro_data = $obj_adminBack->product_by_id($pdtId);
+            $pros = array();
+            $pro_datas = mysqli_fetch_assoc($pro_data);
+            $pros[] = $pro_datas;
+
+        }
+        $catId = $pro_datas['id'];
+        $related_product = $obj_adminBack->related_product($catId);
+    }
 ?>
 
 
@@ -55,7 +83,7 @@
                         <?php include_once ("include/deals_of_the_day.php");?>
                     </div>
                     <div class="col-lg-8 col-md-7 col-sm-6">
-                        <?php include_once("include/top_rated_product.php");?>
+                        <?php include_once("./include/top_rated_product.php");?>
 
                     </div>
                 </div>

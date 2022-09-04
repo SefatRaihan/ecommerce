@@ -7,9 +7,18 @@
         <div class="biolife-tab biolife-tab-contain sm-margin-top-34px">
             <div class="tab-head tab-head__icon-top-layout icon-top-layout">
                 <ul class="tabs md-margin-bottom-35-im xs-margin-bottom-40-im">
-                    <li class="tab-element active">
-                        <a href="#tab01_1st" class="tab-link"><span class="biolife-icon icon-lemon"></span>Oranges</a>
-                    </li>
+                    <?php 
+                        $Count = 0;
+                        foreach ($ctg_datas as $ctg_data){
+                            // print_r($ctg_data['ctg_name']);
+                            // $Count++;
+                            // if ($Count == 6){
+                    ?>
+                        <!-- <li class="tab-element active">
+                            <a href="./category.php?status=catView&&id=<?php echo $ctg_data['id'];?>'.'" class="tab-link"><span class="biolife-icon icon-lemon"></span><?= $ctg_data['ctg_name']; ?></a>
+                        </li> -->
+
+                    <?php  }?>
                     <li class="tab-element" >
                         <a href="#tab01_2nd" class="tab-link"><span class="biolife-icon icon-grape2"></span>Grapes</a>
                     </li>

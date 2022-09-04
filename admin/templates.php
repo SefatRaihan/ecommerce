@@ -43,23 +43,35 @@ include("includes/head.php");
                                 <div class="page-body">
                                         <?php
                                             if($views){
-                                               if($views == "dashboard"){
-                                                   include("views/dashboard-view.php");
-                                               } elseif($views=="add-cat"){
-                                                   include("views/add-category-view.php");
-                                               }elseif($views=="add-product"){
-                                                   include("views/add-product-view.php");
-                                               }elseif($views=="manage-category"){
-                                                   include("views/manage-category-view.php");
-                                               }elseif($views=="manage-product"){
-                                                   include("views/manage-product-view.php");
-                                               }elseif($views=="manage-user"){
-                                                   include("views/manage-user-view.php");
-                                               }elseif($views=="edit-cat"){
-                                                   include("views/edit-cat-view.php");
-                                               }elseif($views=="edit-product"){
-                                                   include("views/edit-product-view.php");
-                                               }
+                                                if($views == "dashboard"){
+                                                    include("views/dashboard-view.php");
+                                                } elseif($views=="add-cat"){
+                                                    include("views/add-category-view.php");
+                                                }elseif($views=="add-product"){
+                                                    include("views/add-product-view.php");
+                                                }elseif($views=="manage-category"){
+                                                    include("views/manage-category-view.php");
+                                                }elseif($views=="manage-product"){
+                                                    include("views/manage-product-view.php");
+                                                }elseif($views=="manage-user"){
+                                                    include("views/manage-user-view.php");
+                                                }elseif($views=="edit-cat"){
+                                                    include("views/edit-cat-view.php");
+                                                }elseif($views=="edit-product"){
+                                                    include("views/edit-product-view.php");
+                                                }elseif($views=="add-sliders"){
+                                                    include("views/add-sliders-view.php");
+                                                }elseif($views=="edit-sliders"){
+                                                    include("views/edit-sliders-view.php");
+                                                }elseif($views=="manage-sliders"){
+                                                    include("views/manage-sliders-view.php");
+                                                }elseif($views=="add-brand"){
+                                                    include("views/add-brand.php");
+                                                }elseif($views=="manage-brand"){
+                                                    include("views/manage-brand.php");
+                                                }elseif($views=="edit-brand"){
+                                                    include("views/edit-brand-view.php");
+                                                }
                                             }
                                         ?>
                                 </div>

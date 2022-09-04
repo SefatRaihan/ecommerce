@@ -45,7 +45,7 @@
                                         <li><a href="#">Who We Are</a></li>
                                         <li><a href="#">Our Services</a></li>
                                         <li><a href="#">Projects</a></li>
-                                        <li><a href="#">Contacts Us</a></li>
+                                        <li><a href="./contact.php">Contact Us</a></li>
                                         <li><a href="#">Innovation</a></li>
                                         <li><a href="#">Testimonials</a></li>
                                     </ul>

@@ -7,28 +7,29 @@
             <div class="col-lg-6 col-md-7 hidden-sm hidden-xs">
                 <div class="primary-menu">
                     <ul class="menu biolife-menu clone-main-menu clone-primary-menu" id="primary-menu" data-menuname="main menu">
-                        <li>
+                        <!-- <li>
                             <div class="vertical-category-block">
                                 <div class="block-title">
                                     <span class="menu-title">Category</span>
-                                    <!-- <span class="angle" data-tgleclass="fa fa-caret-down"><i class="fa fa-caret-up" aria-hidden="true"></i></span> -->
                                 </div>
                                 <div class="wrap-menu">
                                     <ul class="menu clone-main-menu">
-                                        <?php
-                                            foreach ($ctg_datas as $ctg_data){
-                                        ?>
+                                       
                                         <li class="menu-item menu-item-has-children has-megamenu">
-                                            <a href="./category.php?status=catView&&id=<?php echo $ctg_data['id'];?>" class="menu-name" data-title="<?php echo $ctg_data['ctg_name'];?>"><?php echo $ctg_data['ctg_name'];?></a>
+                                            <a href="#" class="menu-name" data-title=""></a>
                                         </li>
-                                        <?php } ?>
+                                        
                                     </ul>
                                 </div>
                             </div>   
-                        </li>                    
+                        </li> -->
+                        <?php
+                            foreach ($ctg_datas as $ctg_data){
+                        ?>                    
                         <li>
-                            <a href="./contact.php" style="color:black" class="link-to">CONTACT US</a>
+                            <a class="link-to" href="./category.php?status=catView&&id=<?php echo $ctg_data['id'];?>" class="menu-name" data-title="<?php echo $ctg_data['ctg_name'];?>"><?php echo $ctg_data['ctg_name'];?></a>
                         </li>
+                        <?php } ?>
                     </ul>
                 </div>
                 <!-- <div class="float-right">

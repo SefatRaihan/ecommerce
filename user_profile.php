@@ -3,11 +3,8 @@ session_start();
 include("admin/classes/adminBack.php");
 $obj_adminBack = new adminBack();
 
-
-
 $user_id = $_SESSION['user_id'];
 $user_name = $_SESSION['user_name'];    
-  
 
 if($user_id == null){
     header('location: user_login.php');
@@ -18,12 +15,26 @@ if(isset($_GET['logoutuser'])){
         $obj_adminBack->userLogout();
     }
 }
+
+if(isset($_GET[$user_id])){
+    $ = $obj_adminBack->userLogin($data);
+}
+// $info = $obj_auserdminBack->userLogin($data);
+// while ($data = mysqli_fetch_assoc($ctg)){
+//     $ctg_datas[] = $data;
+// }
+// print_r($user['user_mobile']);
+
 ?>
 
 
 
 <?php include_once("include/head.php");?>
-
+<?php
+if (isset($user)){
+    echo $user;
+}
+?>
     <body class="biolife-body">
     <!-- Preloader -->
     <div id="biof-loading">
@@ -49,15 +60,6 @@ if(isset($_GET['logoutuser'])){
 
 <div class="container emp-profile">
             <form method="post">
-            <div class="form-group">
-                <input
-                    hidden
-                    type="text"
-                    name="u-ctg-id"
-                    class="form-control"
-                    value="<?php echo $user_id ;?>"
-                >
-            </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
@@ -111,7 +113,7 @@ if(isset($_GET['logoutuser'])){
                                 </div>
                                 <div class="col-md-6">
                                     <p><?php if (isset($user_id)) {
-                                        echo $user_name;
+                                        echo $user_name ?? '';
                                     } ?></p>
                                 </div>
                             </div>
@@ -120,10 +122,7 @@ if(isset($_GET['logoutuser'])){
                                     <label>Name</label>
                                 </div>
                                 <div class="col-md-6">
-                                <p><?php if (isset($user_id)) {
-                                        // echo $_SESSION['first_name'];
-                                        echo $_SESSION['last_name'];
-                                    } ?></p>
+                                
                                 </div>
                             </div> -->
                             <div class="row">
@@ -132,7 +131,7 @@ if(isset($_GET['logoutuser'])){
                                 </div>
                                 <div class="col-md-6">
                                 <p><?php if (isset($user_id)) {
-                                        echo $_SESSION['user_email'];
+                                        echo $_SESSION['user_email'] ?? '';
                                     } ?></p>
                                 </div>
                             </div>
@@ -141,9 +140,7 @@ if(isset($_GET['logoutuser'])){
                                     <label>Phone</label>
                                 </div>
                                 <div class="col-md-6">
-                                <p><?php if (isset($user_id)) {
-                                        echo $_SESSION['user_mobile'];
-                                    } ?></p>
+                                
                                 </div>
                             </div> -->
                     </div>

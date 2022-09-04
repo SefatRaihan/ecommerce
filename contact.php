@@ -117,9 +117,10 @@ background-color: white !important;
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <h2 class="text-center py-2">FAQ!</h2>
+                    <hr>
                     <div class="register-in-container">
                         <div class="intro">
-                            <h4 class="box-title text-center" style="margin-bottom: 20px">FAQ!</h4>
                             <button class="accordion">What do you have to sell?</button>
                             <div class="panel">
                             <p>We are bringing in our fold traditional, native, healthy and unique tasting sweets and snacks to be delivered at your doorstep</p>
