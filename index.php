@@ -1,6 +1,8 @@
 <?php
     include("admin/classes/adminBack.php");
-    $obj_adminBack = new adminBack();
+    $obj_adminBack = new adminBack();   
+
+
     $ctg = $obj_adminBack->displayedPublishCategory();
 
     $ctg_datas = array();
@@ -69,6 +71,7 @@
         <!--Block 01: Main Slide-->
         <?php include_once ("include/main_slider.php");?>
 
+        
         <!--Block 02: Banners-->
         <?php include_once ("include/banner_slider.php");?>
 

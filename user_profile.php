@@ -17,7 +17,7 @@ if(isset($_GET['logoutuser'])){
 }
 
 if(isset($_GET[$user_id])){
-    $ = $obj_adminBack->userLogin($data);
+    $user = $obj_adminBack->userLogin($data);
 }
 // $info = $obj_auserdminBack->userLogin($data);
 // while ($data = mysqli_fetch_assoc($ctg)){

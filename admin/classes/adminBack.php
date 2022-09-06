@@ -1,6 +1,4 @@
 <?php
-// use LDAP\Result;
-
 class adminBack
 {
 
@@ -387,7 +385,7 @@ class adminBack
             return $proinfo;
         }
     }
-    function category_by_id($id){
+    function  category_by_id($id){
         $query = "SELECT * FROM product_info_category WHERE id=$id";
         if(mysqli_query($this->conn,$query)){
             $proinfo = mysqli_query($this->conn,$query);
@@ -514,7 +512,39 @@ class adminBack
         }
     }
 
-    
+ // function searchbar($query){
+    //     $min_length = 3;
+	
+	//     if(strlen($query) >= $min_length){ 
+            
+    //         // $query = htmlspecialchars($query); 
+    //         // $query = mysqli_real_escape_string($query);
+		
+	// 	    $query = "SELECT * FROM products WHERE (`pdt_name` LIKE '%".$query."%')";
+			
+    //         if(mysqli_query($this->conn, $query)) 
+    //         {
+    //             $raw_results = mysqli_query($this->conn, $query);
+    //             if(mysqli_num_rows($raw_results) > 0)
+    //             { 
+			
+    //                 while($results = mysqli_fetch_array($raw_results)){
+    //                     return $results;
+    //                 }
+                    
+    //             }
+    //             else
+    //             { 
+    //                 echo "No results";
+    //             }
+                    
+    //         }
+		
+    //     }
+    //     else{
+    //         echo "Minimum length is ".$min_length;
+    //     }
+    // }   
 
 
 }
