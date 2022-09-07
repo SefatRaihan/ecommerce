@@ -73,10 +73,10 @@
 
         
         <!--Block 02: Banners-->
-        <?php include_once ("include/banner_slider.php");?>
+
 
         <!--Block 03: Product Tabs-->
-        <?php include_once("include/home_related_product.php");?>
+        
 
         <!--Block 06: Products-->
         <div class="Product-box sm-margin-top-96px">
