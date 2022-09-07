@@ -1,13 +1,25 @@
+<?php
+$product_info = $obj_adminBack->displayProduct();
+?>
+
 <div class="advance-product-box">
     <div class="biolife-title-box bold-style biolife-title-box__bold-style">
         <h3 class="title">Deals of the day</h3>
     </div>
     <ul class="products biolife-carousel nav-top-right nav-none-on-mobile" data-slick='{"arrows":true, "dots":false, "infinite":false, "speed":400, "slidesMargin":30, "slidesToShow":1}'>
+        <?php
+            $i =1;
+            while ($product = mysqli_fetch_assoc($product_info) ) {
+   
+        // $count = 0;
+        // if($count == 6){
+            
+        ?>
         <li class="product-item">
             <div class="contain-product deal-layout contain-product__deal-layout">
                 <div class="product-thumb">
                     <a href="#" class="link-to-product">
-                        <img src="assets/images/home-03/product_deal_330x330.jpg" alt="dd" width="330" height="330" class="product-thumnail">
+                        <img src="./admin/upload/<?=$product['pdt_image']?>" alt="dd" width="330" height="330" class="product-thumnail">
                     </a>
                     <div class="labels">
                         <span class="sale-label">-50%</span>
@@ -32,7 +44,9 @@
                 </div>
             </div>
         </li>
-        <li class="product-item">
+            
+        <?php   } ?>
+        <!-- <li class="product-item">
             <div class="contain-product deal-layout contain-product__deal-layout">
                 <div class="product-thumb">
                     <a href="#" class="link-to-product">
@@ -89,6 +103,6 @@
                     </div>
                 </div>
             </div>
-        </li>
+        </li> -->
     </ul>
 </div>
