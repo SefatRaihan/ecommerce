@@ -53,8 +53,11 @@ if(isset($_GET['status'])){
 <!-- Page Contain -->
 <div class="page-contain">
     <!--Hero Section-->
-    <div class="hero-section hero-background">
-        <h1 class="page-title"><?php echo $category_name['ctg_name']; ?>
+    <div class="hero-section hero-background" style="background-image: url('./admin/upload/sliders/business-communications-mockup-laptop-voip-260nw-1868474806.jpg') !important;">
+        <h1 class="page-title">
+        <?php if($category_name == !null) { ?> 
+            <?php echo $category_name['ctg_name']; ?>
+         <?php }?>   
         </h1>
     </div>
 
@@ -63,7 +66,9 @@ if(isset($_GET['status'])){
         <nav class="biolife-nav">
             <ul>
                 <li class="nav-item"><a href="index.php" class="permal-link">Home</a></li>
-                <li class="nav-item"><span class="current-page"><?php echo $category_name['ctg_name']; ?></span></li>
+                <?php if($category_name == !null) { ?> 
+                    <li class="nav-item"><span class="current-page"><?php echo $category_name['ctg_name']; ?></span></li>
+                <?php }?>    
             </ul>
         </nav>
     </div>

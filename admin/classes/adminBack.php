@@ -335,24 +335,25 @@ class adminBack
     }
 
     function updateProduct($data){
-        $u_pdt_id = $data['u-pdt-id'];
-        $u_pdt_name = $data['u-pdt-name'];
-        $u_pdt_price = $data['u-pdt-price'];
-        $u_pdt_category = $data['u-pdt-category'];
-        $u_pdt_desc = $data['u-pdt-desc'];
-        $u_pdt_image_name = $_FILES['u-pdt-image']['name'];
-        $u_pdt_image_size = $_FILES['u-pdt-image']['size'];
-        $u_pdt_image_tmp_name = $_FILES['u-pdt-image']['tmp_name'];
-        $u_pdt_image_extn = pathinfo($u_pdt_image_name, PATHINFO_EXTENSION);
-        $u_pdt_status = $data['u-pdt-status'];
 
-            if($u_pdt_image_extn ==  'jpg' or $u_pdt_image_extn == 'png' or $u_pdt_image_extn == 'jpeg')
+        $id = $data['u-pdt-id'];
+        $name = $data['u-pdt-name'];
+        $price = $data['u-pdt-price'];
+        $category = $data['u-pdt-category'];
+        $desc = $data['u-pdt-desc'];
+        $image_name = $_FILES['u-pdt-image']['name'];
+        $image_size = $_FILES['u-pdt-image']['size'];
+        $image_tmp_name = $_FILES['u-pdt-image']['tmp_name'];
+        $image_extn = pathinfo($image_name, PATHINFO_EXTENSION);
+        $status = $data['u-pdt-status'];
+
+            if($image_extn ==  'jpg' or $image_extn == 'png' or $image_extn == 'jpeg')
             {
-                if ($u_pdt_image_size <= '2097152'){
-                        $query = "UPDATE product SET pdt_name='$u_pdt_name',pdt_price=$u_pdt_price,pdt_category=$u_pdt_category,pdt_desc='$u_pdt_desc',pdt_image='$u_pdt_image_name',pdt_status='$u_pdt_status' WHERE pdt_id=$u_pdt_id";
+                if ($image_size <= '2097152'){
+                        $query = "UPDATE products SET pdt_name='$name',pdt_price=$price,pdt_category=$category,pdt_desc='$desc',pdt_image='$image_name',pdt_status='$status' WHERE pdt_id=$id";
                         if (mysqli_query($this->conn, $query)){
-                            move_uploaded_file($u_pdt_image_tmp_name, 'upload/'.$u_pdt_image_name);
-                            $msg = "Your Product uploaded successfully";
+                            move_uploaded_file($image_tmp_name, 'upload/'.$image_name);
+                            $msg = "Your Product updated successfully";
                             return $msg;
                         }
                 }

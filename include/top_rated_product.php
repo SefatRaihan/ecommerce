@@ -7,12 +7,12 @@
             <div class="contain-product right-info-layout contain-product__right-info-layout">
                 <div class="product-thumb">
                     <a href="#" class="link-to-product">
-                        <img src="assets/images/products/p-19.jpg" alt="dd" width="270" height="270" class="product-thumnail">
+                        <img src="./admin/upload/sliders/Logitech C925e-1-500x500.jpg" alt="dd" width="270" height="270" class="product-thumnail">
                     </a>
                 </div>
                 <div class="info">
-                    <b class="categories">Vegetables</b>
-                    <h4 class="product-title"><a href="#" class="pr-name">Pumpkins Fairytale</a></h4>
+                    <b class="categories">Accessories</b>
+                    <h4 class="product-title"><a href="#" class="pr-name">Logitech WebCam</a></h4>
                     <div class="price ">
                         <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
                         <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
@@ -28,12 +28,12 @@
             <div class="contain-product right-info-layout contain-product__right-info-layout">
                 <div class="product-thumb">
                     <a href="#" class="link-to-product">
-                        <img src="assets/images/products/p-03.jpg" alt="dd" width="270" height="270" class="product-thumnail">
+                        <img src="./admin/upload/sliders/logitech-g402-1-500x500.jpg" alt="dd" width="270" height="270" class="product-thumnail">
                     </a>
                 </div>
                 <div class="info">
-                    <b class="categories">Vegetables</b>
-                    <h4 class="product-title"><a href="#" class="pr-name">Passover Cauliflower</a></h4>
+                    <b class="categories">Accessories</b>
+                    <h4 class="product-title"><a href="#" class="pr-name">Logitech Mouse</a></h4>
                     <div class="price ">
                         <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
                         <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
@@ -49,12 +49,12 @@
             <div class="contain-product right-info-layout contain-product__right-info-layout">
                 <div class="product-thumb">
                     <a href="#" class="link-to-product">
-                        <img src="assets/images/products/p-02.jpg" alt="dd" width="270" height="270" class="product-thumnail">
+                        <img src="./admin/upload/sliders/extent-01-500x500.jpg" alt="dd" width="270" height="270" class="product-thumnail">
                     </a>
                 </div>
                 <div class="info">
-                    <b class="categories">Vegetables</b>
-                    <h4 class="product-title"><a href="#" class="pr-name">Hot Chili Peppers</a></h4>
+                    <b class="categories">Accessories</b>
+                    <h4 class="product-title"><a href="#" class="pr-name">Headphone Stand</a></h4>
                     <div class="price ">
                         <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
                         <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
@@ -70,96 +70,12 @@
             <div class="contain-product right-info-layout contain-product__right-info-layout">
                 <div class="product-thumb">
                     <a href="#" class="link-to-product">
-                        <img src="assets/images/products/p-22.jpg" alt="dd" width="270" height="270" class="product-thumnail">
+                        <img src="./admin/upload/gw520-01-500x500.jpg" alt="dd" width="270" height="270" class="product-thumnail">
                     </a>
                 </div>
                 <div class="info">
-                    <b class="categories">Vegetables</b>
-                    <h4 class="product-title"><a href="#" class="pr-name">Cherry Tomato Seeds</a></h4>
-                    <div class="price ">
-                        <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
-                        <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
-                    </div>
-                    <div class="rating">
-                        <p class="star-rating"><span class="width-80percent"></span></p>
-                        <span class="review-count">(05 Reviews)</span>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="product-item">
-            <div class="contain-product right-info-layout contain-product__right-info-layout">
-                <div class="product-thumb">
-                    <a href="#" class="link-to-product">
-                        <img src="assets/images/products/p-20.jpg" alt="dd" width="270" height="270" class="product-thumnail">
-                    </a>
-                </div>
-                <div class="info">
-                    <b class="categories">Vegetables</b>
-                    <h4 class="product-title"><a href="#" class="pr-name">National Fresh Fruit</a></h4>
-                    <div class="price ">
-                        <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
-                        <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
-                    </div>
-                    <div class="rating">
-                        <p class="star-rating"><span class="width-80percent"></span></p>
-                        <span class="review-count">(05 Reviews)</span>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="product-item">
-            <div class="contain-product right-info-layout contain-product__right-info-layout">
-                <div class="product-thumb">
-                    <a href="#" class="link-to-product">
-                        <img src="assets/images/products/p-05.jpg" alt="dd" width="270" height="270" class="product-thumnail">
-                    </a>
-                </div>
-                <div class="info">
-                    <b class="categories">Vegetables</b>
-                    <h4 class="product-title"><a href="#" class="pr-name">Organic Hass Avocado</a></h4>
-                    <div class="price ">
-                        <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
-                        <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
-                    </div>
-                    <div class="rating">
-                        <p class="star-rating"><span class="width-80percent"></span></p>
-                        <span class="review-count">(05 Reviews)</span>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="product-item">
-            <div class="contain-product right-info-layout contain-product__right-info-layout">
-                <div class="product-thumb">
-                    <a href="#" class="link-to-product">
-                        <img src="assets/images/products/p-06.jpg" alt="dd" width="270" height="270" class="product-thumnail">
-                    </a>
-                </div>
-                <div class="info">
-                    <b class="categories">Vegetables</b>
-                    <h4 class="product-title"><a href="#" class="pr-name">Packham's Pears</a></h4>
-                    <div class="price ">
-                        <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
-                        <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
-                    </div>
-                    <div class="rating">
-                        <p class="star-rating"><span class="width-80percent"></span></p>
-                        <span class="review-count">(05 Reviews)</span>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="product-item">
-            <div class="contain-product right-info-layout contain-product__right-info-layout">
-                <div class="product-thumb">
-                    <a href="#" class="link-to-product">
-                        <img src="assets/images/products/p-20.jpg" alt="dd" width="270" height="270" class="product-thumnail">
-                    </a>
-                </div>
-                <div class="info">
-                    <b class="categories">Vegetables</b>
-                    <h4 class="product-title"><a href="#" class="pr-name">National Fresh Fruit</a></h4>
+                    <b class="categories">Accessories</b>
+                    <h4 class="product-title"><a href="#" class="pr-name">Joy Stick</a></h4>
                     <div class="price ">
                         <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
                         <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
@@ -172,13 +88,13 @@
             </div>
         </li>
     </ul>
-    <div class="biolife-banner style-01 biolife-banner__style-01 sm-margin-top-30px xs-margin-top-80px">
+    <div class="biolife-banner style-01 biolife-banner__style-01 sm-margin-top-30px xs-margin-top-80px" style="background-image: url('./admin/upload/sliders/images (1).jpg');">
         <div class="banner-contain">
             <a href="#" class="bn-link"></a>
             <div class="text-content">
-                <span class="first-line">Daily Fresh</span>
-                <b class="second-line">Natural</b>
-                <i class="third-line">Fresh Food</i>
+                <span class="first-line">Daily Uses</span>
+                <b class="second-line">Accessories</b>
+                <i class="third-line"></i>
                 <span class="fourth-line">Premium Quality</span>
             </div>
         </div>

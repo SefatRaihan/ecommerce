@@ -54,7 +54,7 @@ if(isset($_POST['u-pdt-btn'])){
             <?php
             while ($ctg_data = mysqli_fetch_assoc($ctg_info)) {
                 ?>
-                <option value="<?php echo $ctg_data['id']; ?>"><?php echo $ctg_data['ctg_name']; ?></option>
+                <option value="<?php echo $ctg_data['id'] ? 'selected' : ''; ?>"><?php echo $ctg_data['ctg_name']; ?></option>
                 <?php
             }
             ?>
@@ -72,12 +72,15 @@ if(isset($_POST['u-pdt-btn'])){
             class="form-control"
             value="<?php echo $pdt_info['pdt-image']; ?>"
         >
+        <div class="border border-info m-3" style="width:15%">
+            <img src="upload/<?= $pdt_info['pdt_image'];?>" alt="" width="150px" height="100px">
+        </div>
     </div>
     <div class="form-group">
         <label for="u-pdt-status">Product Status</label>
         <select name="u-pdt-status" class="form-control">
             <option value="1" <?php echo ($pdt_info['pdt_status'] == 1) ? 'selected' : ''; ?>>Published</option>
-            <option value="0" <?php echo ($pdt_info['pdt_status'] == 1) ? 'selected' : ''; ?>pdt_>Unpublished</option>
+            <option value="0" <?php echo ($pdt_info['pdt_status'] == 0) ? 'selected' : '';?>>Unpublished</option>
         </select>
     </div>
     <input
@@ -88,4 +91,5 @@ if(isset($_POST['u-pdt-btn'])){
 
     >
 </form>
+
 

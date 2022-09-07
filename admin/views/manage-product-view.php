@@ -17,47 +17,50 @@
         echo $return_msg;
     }
 ?>
-<table class="table" border="1">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Product Name</th>
-            <th>price</th>
-            <th width="20%">Description</th>
-            <th>Image</th>
-            <th>Category</th>
-            <th>Status</th>
-            <th>Update/Delete</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="table-responsive">
+    <table width="100%" class="table" border="1">
+        <thead>
+            <tr>
+                <th>SL</th>
+                <th width="10%">Product Name</th>
+                <th>price</th>
+                <th width="20%">Description</th>
+                <th>Image</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Update/Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                $i =1;
+                while ($product = mysqli_fetch_assoc($product_info) ) {
+            ?>
+                    <tr>
+                        <td><?php echo $i++;?></td>
+                        <td><?php echo $product['pdt_name'];?></td>
+                        <td><?php echo $product['pdt_price'];?> TK</td>
+                        <td width="20%"><?php echo $product['pdt_desc'];?></td>
+                        <td> <img height="50px" width="50px" src="upload/<?php echo $product['pdt_image'];?>"></td>
+                        <td><?php echo $product['ctg_name'];?></td>
+                        <td>
+                            <?php
+                                if($product['pdt_status']==1){
+                                    echo "Published";
+                                }else{
+                                    echo "Unpublished";
+                                }
+                            ?>
+                        </td>
+                        <td>
+                            <a href="edit-product.php?status=edit&&id=<?php echo $product['pdt_id']; ?>">Edit</a>
+                            <a href="?status=delete&&id=<?php echo $product['pdt_id']; ?>">Delete</a>
+                        </td>
+                    </tr>
         <?php
-            while ($product = mysqli_fetch_assoc($product_info) ) {
+                }
         ?>
-                <tr>
-                    <td><?php echo $product['pdt_id'];?></td>
-                    <td><?php echo $product['pdt_name'];?></td>
-                    <td><?php echo $product['pdt_price'];?></td>
-                    <td width="20%"><?php echo $product['pdt_desc'];?></td>
-                    <td> <img height="50px" width="50px" src="upload/<?php echo $product['pdt_image'];?>"></td>
-                    <td><?php echo $product['ctg_name'];?></td>
-                    <td>
-                        <?php
-                            if($product['pdt_status']==1){
-                                echo "Published";
-                            }else{
-                                echo "Unpublished";
-                            }
-                        ?>
-                    </td>
-                    <td>
-                        <a href="edit-product.php?status=edit&&id=<?php echo $product['pdt_id']; ?>">Edit</a>
-                        <a href="?status=delete&&id=<?php echo $product['pdt_id']; ?>">Delete</a>
-                    </td>
-                </tr>
-    <?php
-            }
-    ?>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
 </div>

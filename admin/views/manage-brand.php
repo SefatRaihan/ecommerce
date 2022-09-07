@@ -18,41 +18,43 @@
         echo $return_msg;
     }
 ?>
-<table class="table" border="1">
-    <thead>
-        <tr>
-            <th>SL</th>
-            <th>Title</th>
-            <th>Image</th>
-            <th>Status</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="table-responsive">
+    <table class="table" border="1">
+        <thead>
+            <tr>
+                <th>SL</th>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                while ($brand = mysqli_fetch_assoc($brands_info) ) {
+            ?>
+                    <tr>
+                        <td><?php echo $brand['id'];?></td>
+                        <td><?php echo $brand['title'];?></td>
+                        <td> <img height="70px" width="100px" src="upload/brand/<?php echo $brand['brand_image'];?>"></td>
+                        <td>
+                            <?php
+                                if($brand['status']==1){
+                                    echo "Published";
+                                }else{
+                                    echo "Unpublished";
+                                }
+                            ?>
+                        </td>
+                        <td>
+                            <a href="edit-brand.php?status=edit&&id=<?php echo $brand['id']; ?>">Edit</a>
+                            <a href="?status=delete&&id=<?php echo $brand['id']; ?>">Delete</a>
+                        </td>
+                    </tr>
         <?php
-            while ($brand = mysqli_fetch_assoc($brands_info) ) {
+                }
         ?>
-                <tr>
-                    <td><?php echo $brand['id'];?></td>
-                    <td><?php echo $brand['title'];?></td>
-                    <td> <img height="70px" width="100px" src="upload/brand/<?php echo $brand['brand_image'];?>"></td>
-                    <td>
-                        <?php
-                            if($brand['status']==1){
-                                echo "Published";
-                            }else{
-                                echo "Unpublished";
-                            }
-                        ?>
-                    </td>
-                    <td>
-                        <a href="edit-brand.php?status=edit&&id=<?php echo $brand['id']; ?>">Edit</a>
-                        <a href="?status=delete&&id=<?php echo $brand['id']; ?>">Delete</a>
-                    </td>
-                </tr>
-    <?php
-            }
-    ?>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>   
 </div>

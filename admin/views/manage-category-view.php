@@ -18,7 +18,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Category Id</th>
+            <th>SL</th>
             <th>Category</th>
             <th>Description</th>
             <th>Status</th>
@@ -27,10 +27,11 @@
     </thead>
     <tbody>
         <?php
+            $i =1;
             while ($category = mysqli_fetch_assoc($category_data)) {
         ?>
                 <tr>
-                    <td><?php echo $category['id']; ?></td>
+                    <td><?php echo $i++ ?></td>
                     <td><?php echo $category['ctg_name']; ?></td>
                     <td><?php echo $category['ctg_desc']; ?></td>
                     <td>

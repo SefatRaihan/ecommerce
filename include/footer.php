@@ -4,12 +4,13 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-9">
                     <section class="footer-item">
-                        <a href="home-03-green.html" class="logo footer-logo"><img src="assets/images/organic-3-green.png" alt="biolife logo" width="135" height="36"></a>
+                        <!-- <a href="home-03-green.html" class="logo footer-logo"><img src="assets/images/organic-3-green.png" alt="biolife logo" width="135" height="36"></a> -->
+                        <a href="index.php" class="logo footer-logo" style="color: #7FAF51; font-size:35px"><strong>E-SHOP</strong></a>
                         <div class="footer-phone-info">
                             <i class="biolife-icon icon-head-phone"></i>
                             <p class="r-info">
                                 <span>Got Questions ?</span>
-                                <span>(700)  9001-1909  (900) 689 -66</span>
+                                <span>(700) 9001-1909  (900) 689 -66</span>
                             </p>
                         </div>
                         <div class="newsletter-block layout-01">

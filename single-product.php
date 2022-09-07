@@ -65,9 +65,13 @@
                 <li class="nav-item"><span class="current-page"><a href=""><?php foreach ($pros as $pro){
                                 echo $pro['ctg_name'];
                             } ?></a></span></li>
-                <li class="nav-item"><span class="current-page"><?php foreach ($pros as $pro){
+                <li class="nav-item">
+                    <span class="current-page">
+                        <?php foreach ($pros as $pro){
                             echo $pro['pdt_name'];
-                        } ?></span></li>
+                        } ?>
+                    </span>
+                </li>
             </ul>
         </nav>
     </div>
