@@ -5,6 +5,8 @@ $obj_adminBack = new adminBack();
 
 $user_id = $_SESSION['user_id'];
 $user_name = $_SESSION['user_name'];    
+// $first_name = $_SESSION['first_name'];    
+// $last_name = $_SESSION['last_name'];    
 
 if($user_id == null){
     header('location: user_login.php');
@@ -72,9 +74,22 @@ if (isset($user)){
                     </div>
                     <div class="col-md-6">
                         <div class="profile-head">
-                            <h5>
-                                Kshiti Ghelani
-                            </h5>
+                            <h3>
+                                <span>
+                                <?php 
+                                    if (isset($user_id)) {
+                                        echo $_SESSION['first_name'] ?? '';
+                                    } 
+                                ?>
+                                </span>
+                                <span>
+                                <?php 
+                                    if (isset($user_id)) {
+                                        echo $_SESSION['last_name'] ?? '';
+                                    } 
+                                ?>
+                                </span>
+                            </h3>
                             <h6>
                                 Web Developer and Designer
                             </h6>
@@ -117,14 +132,26 @@ if (isset($user)){
                                     } ?></p>
                                 </div>
                             </div>
-                            <!-- <div class="row">
+                            <div class="row">
                                 <div class="col-md-6">
-                                    <label>Name</label>
+                                    <label>First Name</label>
                                 </div>
                                 <div class="col-md-6">
-                                
+                                <p><?php if (isset($user_id)) {
+                                        echo $_SESSION['first_name'] ?? '';
+                                    } ?></p>
                                 </div>
-                            </div> -->
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>last Name</label>
+                                </div>
+                                <div class="col-md-6">
+                                <p><?php if (isset($user_id)) {
+                                        echo $_SESSION['last_name'] ?? '';
+                                    } ?></p>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Email</label>
@@ -135,14 +162,16 @@ if (isset($user)){
                                     } ?></p>
                                 </div>
                             </div>
-                            <!-- <div class="row">
+                            <div class="row">
                                 <div class="col-md-6">
                                     <label>Phone</label>
                                 </div>
                                 <div class="col-md-6">
-                                
+                                    <p><?php if (isset($user_id)) {
+                                        echo $_SESSION['user_mobile'] ?? '';
+                                    } ?></p>
                                 </div>
-                            </div> -->
+                            </div>
                     </div>
                 </div>
             </form>   

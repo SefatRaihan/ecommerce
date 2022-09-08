@@ -10,13 +10,13 @@ while ($data = mysqli_fetch_assoc($ctg)){
 }
 
     if (isset($_POST['user_register_btn'])){
-        $msg = $obj_adminBack->userRegister($_POST);
+        $return_msg = $obj_adminBack->userRegister($_POST);
     }
 
     if(isset($_SESSION['user_id'])){
         $userId = $_SESSION['user_id'];
         if($userId){
-            header('location:user_profile.php');
+            header('location:index.php');
         }
     }
 
@@ -53,7 +53,11 @@ while ($data = mysqli_fetch_assoc($ctg)){
     <!-- Page Contain -->
     <div class="page-contain">
         <div class="container">
-           
+           <?php
+            if (isset($return_msg)){
+                echo $return_msg;
+            }
+           ?>
             <div class="row">
                 <!--Form Sign In-->
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

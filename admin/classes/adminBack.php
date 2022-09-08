@@ -429,13 +429,13 @@ class adminBack
         //     $msg = "This Username or Email Already Exist!";
         //     return $msg;
         // }else{
-            
-        // }
-
-        if(strlen($userMobile) < 11 or strlen($userMobile) > 11)
+            if(strlen($userMobile) < 11 or strlen($userMobile) > 11)
             {
                 $msg = "Your Mobile Number is not valid";
             }
+        // }
+
+       
         $query="INSERT INTO users SET userName='$userName', first_name='$userFirstName', last_name='$userLastName', user_email='$userEmail', user_password='$userPassword', user_mobile=$userMobile, user_roles=$userRoles";
         
         if(mysqli_query($this->conn, $query)){
@@ -454,21 +454,29 @@ class adminBack
         $user_password = md5($data['user_password']);
 
         $query = "SELECT * FROM users WHERE user_email = '$user_email' AND user_password = '$user_password'";
+        
 
         if (mysqli_query($this->conn, $query)) {
             $result = mysqli_query($this->conn, $query);
+            // print_r($result);
+            // die();
             $user_info = mysqli_fetch_assoc($result);
             
 
+                
             if ($user_info){
-                header('location:user_profile.php');
+                header('location:index.php');
                 session_start();
                 $_SESSION['user_id'] = $user_info['user_id'];
                 $_SESSION['user_email'] = $user_info['user_email'];
                 $_SESSION['user_password'] = $user_info['user_password'];
                 $_SESSION['user_name'] = $user_info['userName'];
+                $_SESSION['first_name'] = $user_info['first_name'];
+                $_SESSION['last_name'] = $user_info['last_name'];
+                $_SESSION['user_mobile'] = $user_info['user_mobile'];
             } else {
                 $error =  "your email or password is incorrect";
+                return $error;
             }
 
         }
@@ -514,6 +522,14 @@ class adminBack
         }
     }
 
+    function displayUser(){
+        $query = "SELECT * FROM users";
+        if (mysqli_query($this->conn,$query)){
+            $user = mysqli_query($this->conn,$query);
+
+        }
+        return $user;
+    }
     
 
 
