@@ -513,39 +513,40 @@ class adminBack
         }
     }
 
- // function searchbar($query){
-    //     $min_length = 3;
+ function searchbar($query){
+        $min_length = 3;
 	
-	//     if(strlen($query) >= $min_length){ 
+	    if(strlen($query) >= $min_length){ 
             
-    //         // $query = htmlspecialchars($query); 
-    //         // $query = mysqli_real_escape_string($query);
+            // $query = htmlspecialchars($query); 
+            // $query = mysqli_real_escape_string($query);
 		
-	// 	    $query = "SELECT * FROM products WHERE (`pdt_name` LIKE '%".$query."%')";
+		    $query = "SELECT * FROM products WHERE (`pdt_name` LIKE '%".$query."%')";
 			
-    //         if(mysqli_query($this->conn, $query)) 
-    //         {
-    //             $raw_results = mysqli_query($this->conn, $query);
-    //             if(mysqli_num_rows($raw_results) > 0)
-    //             { 
-			
-    //                 while($results = mysqli_fetch_array($raw_results)){
-    //                     return $results;
-    //                 }
+            if(mysqli_query($this->conn, $query)) 
+            {
+                $raw_results = mysqli_query($this->conn, $query);
+                var_dump($raw_results);
+                if(mysqli_num_rows($raw_results) > 0)
+                { 
                     
-    //             }
-    //             else
-    //             { 
-    //                 echo "No results";
-    //             }
+                        while($data = mysqli_fetch_array($raw_results)){
+                             var_dump($data);
+                        }
+                                    
+                }
+                else
+                { 
+                    echo "No results";
+                }
                     
-    //         }
+            }
 		
-    //     }
-    //     else{
-    //         echo "Minimum length is ".$min_length;
-    //     }
-    // }   
+        }
+        else{
+            echo "Minimum length is ".$min_length;
+        }
+    }   
 
 
 }

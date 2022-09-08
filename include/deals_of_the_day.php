@@ -12,8 +12,8 @@ $product_info = $obj_adminBack->displayProduct();
             while ($product = mysqli_fetch_assoc($product_info) ) {
    
         $count = 0;
-        if($product['pdt_price'] < 10000){
-            $discount_price = ($product['pdt_price'] - ($product['pdt_price'] * (5/100)));
+        if($product['pdt_price'] > 10000){
+            $discount_price = ($product['pdt_price'] - ($product['pdt_price'] * (10/100)));
         ?>
         <li class="product-item">
             <div class="contain-product deal-layout contain-product__deal-layout">
@@ -22,7 +22,7 @@ $product_info = $obj_adminBack->displayProduct();
                         <img src="./admin/upload/<?=$product['pdt_image']?>" alt="dd" width="330" height="330" class="product-thumnail">
                     </a>
                     <div class="labels">
-                        <span class="sale-label">-5%</span>
+                        <span class="sale-label">-10%</span>
                     </div>
                 </div>
                 <div class="info">
@@ -30,8 +30,8 @@ $product_info = $obj_adminBack->displayProduct();
                     <b class="categories"><?php  ?></b>
                     <h4 class="product-title"><a href="#" class="pr-name"><?= $product['pdt_name']?></a></h4>
                     <div class="price ">
-                        <ins><span class="price-amount"><span class="currencySymbol"></span><?= $product['pdt_price']?>Tk</span></ins>
-                        <del><span class="price-amount"><span class="currencySymbol"></span><?= $discount_price ?></span>Tk</del>
+                        <ins><span class="price-amount"><span class="currencySymbol"></span><?= $discount_price ?></span>Tk</ins>
+                        <del><span class="price-amount"><span class="currencySymbol"></span><?= $product['pdt_price']?></span>Tk</del>
                     </div>
                     <div class="slide-down-box">
                         <p class="message"><?php $product['pdt_desc']?></p>
