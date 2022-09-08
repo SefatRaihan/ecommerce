@@ -16,7 +16,8 @@
                 </div>
             </div>
             <a href="dashboard.php">
-                <img class="img-fluid" src="assets/images/logo.png" alt="Theme-Logo" />
+                <strong style="font-size: 2rem">E-Shop</strong>
+                
             </a>
             <a class="mobile-options">
                 <i class="ti-more"></i>
