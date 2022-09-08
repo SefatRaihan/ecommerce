@@ -26,7 +26,7 @@ include("includes/head.php");
                 <div class="login-card card-block auth-body mr-auto ml-auto">
                     <form action="" method="post" class="md-float-material">
                         <div class="text-center">
-                            <img src="assets/images/logo.png" alt="logo.png">
+                        <strong style="font-size: 2rem">E-Shop</strong>
                         </div>
                         <div class="auth-box">
                             <div class="row m-b-20">
