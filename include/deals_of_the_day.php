@@ -11,9 +11,9 @@ $product_info = $obj_adminBack->displayProduct();
             $i =1;
             while ($product = mysqli_fetch_assoc($product_info) ) {
    
-        // $count = 0;
-        // if($count == 6){
-            
+        $count = 0;
+        if($product['pdt_price'] < 10000){
+            $discount_price = ($product['pdt_price'] - ($product['pdt_price'] * (5/100)));
         ?>
         <li class="product-item">
             <div class="contain-product deal-layout contain-product__deal-layout">
@@ -22,19 +22,19 @@ $product_info = $obj_adminBack->displayProduct();
                         <img src="./admin/upload/<?=$product['pdt_image']?>" alt="dd" width="330" height="330" class="product-thumnail">
                     </a>
                     <div class="labels">
-                        <span class="sale-label">-50%</span>
+                        <span class="sale-label">-5%</span>
                     </div>
                 </div>
                 <div class="info">
                     <div class="biolife-countdown" data-datetime="2020-01-18 00:00 +00:00"></div>
-                    <b class="categories">Fresh Fruit</b>
-                    <h4 class="product-title"><a href="#" class="pr-name">National Fresh Fruit</a></h4>
+                    <b class="categories"><?php  ?></b>
+                    <h4 class="product-title"><a href="#" class="pr-name"><?= $product['pdt_name']?></a></h4>
                     <div class="price ">
-                        <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
-                        <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
+                        <ins><span class="price-amount"><span class="currencySymbol"></span><?= $product['pdt_price']?>Tk</span></ins>
+                        <del><span class="price-amount"><span class="currencySymbol"></span><?= $discount_price ?></span>Tk</del>
                     </div>
                     <div class="slide-down-box">
-                        <p class="message">All products are carefully selected to ensure food safety.</p>
+                        <p class="message"><?php $product['pdt_desc']?></p>
                         <div class="buttons">
                             <a href="#" class="btn wishlist-btn"><i class="fa fa-heart" aria-hidden="true"></i></a>
                             <a href="#" class="btn add-to-cart-btn">add to cart</a>
@@ -45,7 +45,7 @@ $product_info = $obj_adminBack->displayProduct();
             </div>
         </li>
             
-        <?php   } ?>
+        <?php } } ?>
         <!-- <li class="product-item">
             <div class="contain-product deal-layout contain-product__deal-layout">
                 <div class="product-thumb">
