@@ -424,17 +424,18 @@ class adminBack
 
         $get_user_data = "SELECT * FROM users WHERE user_name='$userName' or user_email = '$userEmail'";
         $sendData = mysqli_query($this->conn, $get_user_data);
-        $row = mysqli_num_rows($sendData);
-        if($row == 1){
-            $msg = "This Username or Email Already Exist!";
-            return $msg;
-        }else{
-            if(strlen($userMobile) < 11 or strlen($userMobile) > 11)
+        // $row = ;
+        // if(mysqli_num_rows($sendData) == 1){
+        //     $msg = "This Username or Email Already Exist!";
+        //     return $msg;
+        // }else{
+            
+        // }
+
+        if(strlen($userMobile) < 11 or strlen($userMobile) > 11)
             {
                 $msg = "Your Mobile Number is not valid";
             }
-        }
-
         $query="INSERT INTO users SET userName='$userName', first_name='$userFirstName', last_name='$userLastName', user_email='$userEmail', user_password='$userPassword', user_mobile=$userMobile, user_roles=$userRoles";
         
         if(mysqli_query($this->conn, $query)){
@@ -513,40 +514,7 @@ class adminBack
         }
     }
 
- function searchbar($query){
-        $min_length = 3;
-	
-	    if(strlen($query) >= $min_length){ 
-            
-            // $query = htmlspecialchars($query); 
-            // $query = mysqli_real_escape_string($query);
-		
-		    $query = "SELECT * FROM products WHERE (`pdt_name` LIKE '%".$query."%')";
-			
-            if(mysqli_query($this->conn, $query)) 
-            {
-                $raw_results = mysqli_query($this->conn, $query);
-                var_dump($raw_results);
-                if(mysqli_num_rows($raw_results) > 0)
-                { 
-                    
-                        while($data = mysqli_fetch_array($raw_results)){
-                             var_dump($data);
-                        }
-                                    
-                }
-                else
-                { 
-                    echo "No results";
-                }
-                    
-            }
-		
-        }
-        else{
-            echo "Minimum length is ".$min_length;
-        }
-    }   
+    
 
 
 }

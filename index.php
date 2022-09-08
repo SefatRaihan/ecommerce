@@ -1,11 +1,7 @@
 <?php
     include("admin/classes/adminBack.php");
     $obj_adminBack = new adminBack();   
-    // $get =  $_GET['query'];
-    // $data = $obj_adminBack->searchbar($get);
-    // var_dump($data);
 
-    
     $ctg = $obj_adminBack->displayedPublishCategory();
 
     $ctg_datas = array();
@@ -43,8 +39,6 @@
 
 
 ?>
-
-
 
 <?php include_once("include/head.php");?>
 
